@@ -4,7 +4,10 @@ RoboShelf is a smart-supermarket picking system for a UR30 robot, a Robotiq 3F g
 
 ## Demo
 
-[Watch the RoboShelf demonstration video](docs/assets/roboshelf-demo.mp4) (3 min 38 sec, 540p)
+
+https://github.com/user-attachments/assets/2c3361c0-0a71-46ff-bf55-3019e216016c
+
+
 
 ## Repository layout
 
