@@ -31,7 +31,7 @@ The project is designed to run in mock mode without ROS or hardware. Use it to v
 ## Quick start: mock mode
 
 ```bash
-git clone <your-github-repository-url> RoboShelf
+git clone https://github.com/zifeiyu-qc/RoboShelf.git
 cd RoboShelf
 python3 -m venv .venv
 source .venv/bin/activate
