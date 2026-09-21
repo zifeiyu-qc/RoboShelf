@@ -1,0 +1,18 @@
+<launch>
+  <arg name="use_rviz" default="true"/>
+
+  <node pkg="robotiq_3f_gripper_joint_state_publisher"
+        type="robotiq_3f_gripper_joint_states"
+        name="robotiq_3f_gripper_joint_states" output="screen" required="true"/>
+
+  <include file="$(find ur30_3f_moveit_config)/launch/move_group.launch">
+    <arg name="allow_trajectory_execution" value="true"/>
+    <arg name="moveit_controller_manager" value="simple"/>
+    <arg name="pipeline" value="ompl"/>
+    <arg name="load_robot_description" value="false"/>
+  </include>
+
+  <include if="$(arg use_rviz)" file="$(find ur30_3f_moveit_config)/launch/moveit_rviz.launch">
+    <arg name="rviz_config" value="$(find ur30_3f_moveit_config)/launch/moveit.rviz"/>
+  </include>
+</launch>

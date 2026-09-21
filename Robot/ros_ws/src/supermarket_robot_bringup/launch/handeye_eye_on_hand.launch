@@ -1,0 +1,35 @@
+<launch>
+  <!-- Eye-in-hand calibration for the supermarket UR30 project. -->
+  <arg name="move_group" default="manipulator"/>
+  <arg name="robot_base_frame" default="base_link"/>
+  <arg name="robot_effector_frame" default="palm"/>
+  <arg name="tracking_base_frame" default="camera_color_optical_frame"/>
+  <arg name="tracking_marker_frame" default="aruco_marker_frame"/>
+  <arg name="namespace_prefix" default="supermarket_handeye"/>
+  <arg name="freehand_robot_movement" default="false"/>
+  <arg name="start_rviz" default="true"/>
+  <arg name="start_sampling_gui" default="true"/>
+  <arg name="publish_dummy" default="true"/>
+  <arg name="translation_delta_meters" default="0.05"/>
+  <arg name="rotation_delta_degrees" default="15"/>
+  <arg name="robot_velocity_scaling" default="0.08"/>
+  <arg name="robot_acceleration_scaling" default="0.03"/>
+
+  <include file="$(find easy_handeye)/launch/calibrate.launch">
+    <arg name="eye_on_hand" value="true"/>
+    <arg name="namespace_prefix" value="$(arg namespace_prefix)"/>
+    <arg name="freehand_robot_movement" value="$(arg freehand_robot_movement)"/>
+    <arg name="move_group" value="$(arg move_group)"/>
+    <arg name="robot_base_frame" value="$(arg robot_base_frame)"/>
+    <arg name="robot_effector_frame" value="$(arg robot_effector_frame)"/>
+    <arg name="tracking_base_frame" value="$(arg tracking_base_frame)"/>
+    <arg name="tracking_marker_frame" value="$(arg tracking_marker_frame)"/>
+    <arg name="publish_dummy" value="$(arg publish_dummy)"/>
+    <arg name="start_rviz" value="$(arg start_rviz)"/>
+    <arg name="start_sampling_gui" value="$(arg start_sampling_gui)"/>
+    <arg name="translation_delta_meters" value="$(arg translation_delta_meters)"/>
+    <arg name="rotation_delta_degrees" value="$(arg rotation_delta_degrees)"/>
+    <arg name="robot_velocity_scaling" value="$(arg robot_velocity_scaling)"/>
+    <arg name="robot_acceleration_scaling" value="$(arg robot_acceleration_scaling)"/>
+  </include>
+</launch>

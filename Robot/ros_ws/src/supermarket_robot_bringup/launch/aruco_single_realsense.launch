@@ -1,0 +1,23 @@
+<launch>
+  <!-- Detect one ArUco marker from the eye-in-hand RGB stream. -->
+  <arg name="marker_id" default="582"/>
+  <arg name="marker_size" default="0.034"/>
+  <arg name="image_topic" default="/camera/color/image_raw"/>
+  <arg name="camera_info_topic" default="/camera/color/camera_info"/>
+  <arg name="camera_frame" default="camera_color_optical_frame"/>
+  <arg name="marker_frame" default="aruco_marker_frame"/>
+  <arg name="reference_frame" default="camera_color_optical_frame"/>
+  <arg name="corner_refinement" default="LINES"/>
+
+  <node pkg="aruco_ros" type="single" name="supermarket_aruco_single" output="screen">
+    <remap from="/image" to="$(arg image_topic)"/>
+    <remap from="/camera_info" to="$(arg camera_info_topic)"/>
+    <param name="image_is_rectified" value="true"/>
+    <param name="marker_size" value="$(arg marker_size)"/>
+    <param name="marker_id" value="$(arg marker_id)"/>
+    <param name="reference_frame" value="$(arg reference_frame)"/>
+    <param name="camera_frame" value="$(arg camera_frame)"/>
+    <param name="marker_frame" value="$(arg marker_frame)"/>
+    <param name="corner_refinement" value="$(arg corner_refinement)"/>
+  </node>
+</launch>

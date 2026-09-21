@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#147a52">
+  <title>智慧超市机器人取货系统</title>
+  <link rel="stylesheet" href="/static/style.css?v=20260810-layout4">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand-mark" aria-hidden="true">智</div>
+    <div class="brand-copy">
+      <h1>智慧超市机器人取货系统</h1>
+      <p>UR30 Robotic Picking System</p>
+    </div>
+    <div id="connection" class="connection offline" aria-live="polite">
+      <span class="status-dot"></span><span id="connectionText">连接中</span>
+    </div>
+  </header>
+
+  <main class="page-shell">
+    <section class="intro-band">
+      <div>
+        <span class="eyebrow">自助取货</span>
+        <h2>挑选商品，交给机器人</h2>
+        <p>选择商品并提交订单，机器人将自动完成商品抓取并放入购物篮。</p>
+      </div>
+      <div class="intro-badge" aria-hidden="true"><span>UR30</span><small>READY TO PICK</small></div>
+    </section>
+
+    <div class="content-grid">
+      <section class="product-section" aria-labelledby="productTitle">
+        <div class="section-heading">
+          <div><span class="section-index">01</span><h2 id="productTitle">选择商品</h2></div>
+          <span id="selectionCount" class="selection-mark">未选择</span>
+        </div>
+        <div class="shelf-scroll" aria-label="三层商品货架">
+          <div id="marketShelf" class="market-shelf" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <aside class="side-stack">
+        <section class="order-panel" aria-labelledby="orderTitle">
+          <div class="section-heading">
+            <div><span class="section-index">02</span><h2 id="orderTitle">确认订单</h2></div>
+          </div>
+          <div id="cartLines" class="cart-lines"><p class="empty-cart">尚未选择商品</p></div>
+          <div class="order-total"><span>合计</span><strong id="cartTotal">￥0.00</strong></div>
+          <div class="current-state">
+            <span>当前任务状态</span>
+            <strong id="taskStatus">正在加载商品</strong>
+            <p id="taskMessage">请稍候</p>
+          </div>
+          <button id="submitOrder" type="button" disabled>
+            <span id="buttonText">正在加载商品</span><span class="button-arrow" aria-hidden="true">→</span>
+          </button>
+          <p id="offlineNotice" class="offline-notice" role="alert" hidden>机器人服务当前离线，暂时无法提交订单。</p>
+        </section>
+
+        <section class="camera-panel" aria-labelledby="cameraTitle">
+          <div class="camera-heading">
+            <div><span class="section-index">LIVE</span><h3 id="cameraTitle">相机实时视角</h3></div>
+            <span id="cameraState" class="camera-state offline">等待</span>
+          </div>
+          <div class="camera-frame">
+            <img id="cameraFeed" alt="D405 摄像头实时画面">
+            <div id="cameraPlaceholder" class="camera-placeholder">等待相机画面</div>
+          </div>
+        </section>
+      </aside>
+    </div>
+
+    <section class="progress-section" aria-labelledby="progressTitle">
+      <div class="section-heading">
+        <div><span class="section-index">03</span><h2 id="progressTitle">取货进度</h2></div>
+        <span id="taskId" class="task-id"></span>
+      </div>
+      <ol id="progressSteps" class="progress-steps">
+        <li data-step="submitted"><span>1</span><p>订单已提交</p></li>
+        <li data-step="waiting"><span>2</span><p>等待机器人</p></li>
+        <li data-step="to_pick"><span>3</span><p>前往抓取点</p></li>
+        <li data-step="grasping"><span>4</span><p>正在抓取</p></li>
+        <li data-step="to_place"><span>5</span><p>前往购物篮</p></li>
+        <li data-step="releasing"><span>6</span><p>正在放置</p></li>
+        <li data-step="completed"><span>7</span><p>取货完成</p></li>
+      </ol>
+      <div id="resultBanner" class="result-banner" role="status" hidden>
+        <div class="result-icon" aria-hidden="true">✓</div>
+        <div><strong id="resultTitle"></strong><p id="resultMessage"></p></div>
+        <button id="retryButton" class="retry-button" type="button" hidden>重新尝试</button>
+      </div>
+    </section>
+  </main>
+
+  <footer><span>安全提示</span>网页仅用于提交取货任务，软件控制不能代替机械臂实体急停装置。</footer>
+  <script src="/static/app.js?v=20260810-layout4" defer></script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<launch>
+  <!-- Publish the saved eye-in-hand calibration transform after calibration. -->
+  <arg name="namespace_prefix" default="supermarket_handeye"/>
+  <arg name="robot_effector_frame" default="palm"/>
+  <arg name="tracking_base_frame" default="camera_color_optical_frame"/>
+  <arg name="calibration_file" default=""/>
+
+  <include file="$(find easy_handeye)/launch/publish.launch">
+    <arg name="eye_on_hand" value="true"/>
+    <arg name="namespace_prefix" value="$(arg namespace_prefix)"/>
+    <arg name="robot_effector_frame" value="$(arg robot_effector_frame)"/>
+    <arg name="tracking_base_frame" value="$(arg tracking_base_frame)"/>
+    <arg name="calibration_file" value="$(arg calibration_file)"/>
+  </include>
+</launch>

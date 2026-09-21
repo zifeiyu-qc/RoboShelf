@@ -1,0 +1,16 @@
+<launch>
+  <arg name="robot_ip" default="192.168.1.10"/>
+  <arg name="reverse_ip" default="192.168.1.100"/>
+  <arg name="headless_mode" default="true"/>
+  <arg name="kinematics_config"
+       default="$(find supermarket_robot_bringup)/config/ur30_calibration.yaml"/>
+
+  <include file="$(find ur_robot_driver)/launch/ur30_bringup.launch">
+    <arg name="robot_ip" value="$(arg robot_ip)"/>
+    <arg name="reverse_ip" value="$(arg reverse_ip)"/>
+    <arg name="headless_mode" value="$(arg headless_mode)"/>
+    <arg name="kinematics_config" value="$(arg kinematics_config)"/>
+    <arg name="robot_description_file"
+         value="$(find supermarket_robot_bringup)/launch/load_ur30_3f.launch"/>
+  </include>
+</launch>

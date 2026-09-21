@@ -1,0 +1,13 @@
+train: train/images
+val: valid/images
+test: test/images
+
+nc: 11
+names: ['apple', 'blue_cup', 'dishwashing', 'dongpeng', 'milk', 'red_cup', 'tea', 'water1500', 'water560', 'xbox_charger', 'yanmai']
+
+roboflow:
+  workspace: cruber-james
+  project: supermarket-4c6hd
+  version: 1
+  license: Private
+  url: https://app.roboflow.com/cruber-james/supermarket-4c6hd/1

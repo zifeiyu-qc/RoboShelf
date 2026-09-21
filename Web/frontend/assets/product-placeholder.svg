@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 300" role="img" aria-labelledby="title desc">
+  <title id="title">演示商品包装</title><desc id="desc">绿色和白色的演示商品盒</desc>
+  <rect width="360" height="300" fill="#eef4f0"/>
+  <ellipse cx="180" cy="264" rx="92" ry="15" fill="#d7e3db"/>
+  <path d="M105 55h150l18 192H87z" fill="#fff" stroke="#c5d5cb" stroke-width="3"/>
+  <path d="M105 55h150l8 82H97z" fill="#147a52"/>
+  <circle cx="180" cy="137" r="48" fill="#fff"/>
+  <path d="M184 101c20 15 27 37 15 61-12 23-36 27-56 16 7-3 13-8 17-15-18-2-28-12-30-27 19 5 37-4 54-35z" fill="#38a169"/>
+  <path d="M184 103c-1-13 5-23 17-29" fill="none" stroke="#165b3d" stroke-width="7" stroke-linecap="round"/>
+  <text x="180" y="214" text-anchor="middle" font-family="Arial,sans-serif" font-size="20" font-weight="700" fill="#173d2f">DEMO PRODUCT</text>
+  <text x="180" y="238" text-anchor="middle" font-family="Arial,sans-serif" font-size="13" fill="#618073">SMART MARKET</text>
+</svg>

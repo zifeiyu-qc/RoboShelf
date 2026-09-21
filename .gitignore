@@ -1,0 +1,30 @@
+# Python
+.venv/
+.yolo-venv/
+__pycache__/
+*.py[cod]
+
+# ROS generated files
+Robot/ros_ws/build/
+Robot/ros_ws/devel/
+Robot/ros_ws/install/
+Robot/ros_ws/log/
+
+# Models, datasets, and experiment output
+*.pt
+runs/
+supermarket.yolov8/train/
+supermarket.yolov8/valid/
+supermarket.yolov8/test/
+Robot/vision/debug/
+
+# Local assets and notes
+object_pic/*
+!object_pic/first_floor/
+!object_pic/first_floor/.gitkeep
+!object_pic/second_floor/
+!object_pic/second_floor/.gitkeep
+!object_pic/third_floor/
+!object_pic/third_floor/.gitkeep
+*.log
+.DS_Store

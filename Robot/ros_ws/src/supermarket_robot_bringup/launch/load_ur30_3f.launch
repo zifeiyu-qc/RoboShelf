@@ -1,0 +1,14 @@
+<launch>
+  <arg name="kinematics_params"
+       default="$(find supermarket_robot_bringup)/config/ur30_calibration.yaml"/>
+  <arg name="joint_limit_params" default="$(find ur_description)/config/ur30/joint_limits.yaml"/>
+  <arg name="physical_params" default="$(find ur_description)/config/ur30/physical_parameters.yaml"/>
+  <arg name="visual_params" default="$(find ur_description)/config/ur30/visual_parameters.yaml"/>
+
+  <param name="robot_description" command="$(find xacro)/xacro
+    '$(find supermarket_robot_bringup)/urdf/ur30_calibrated_3f.urdf.xacro'
+    joint_limit_params:=$(arg joint_limit_params)
+    kinematics_params:=$(arg kinematics_params)
+    physical_params:=$(arg physical_params)
+    visual_params:=$(arg visual_params)"/>
+</launch>
